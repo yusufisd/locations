@@ -17,12 +17,12 @@ class LocationController extends Controller
     public function index()
     {
         $locations = $this->locationService->getAllLocations();
-        return view('locations.index', compact('locations'));
+        return view('pages.locations.index', compact('locations'));
     }
 
     public function create()
     {
-        return view('locations.create');
+        return view('pages.locations.create');
     }
 
     public function store(Request $request)
@@ -34,7 +34,7 @@ class LocationController extends Controller
     public function edit($id)
     {
         $location = $this->locationService->getLocationById($id);
-        return view('locations.edit', compact('location'));
+        return view('pages.locations.edit', compact('location'));
     }
 
     public function update(Request $request, $id)

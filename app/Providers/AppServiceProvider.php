@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(LocationRepositoryInterface::class, LocationRepository::class);
+        $this->app->register(LocationServiceProvider::class);
     }
 
     /**
