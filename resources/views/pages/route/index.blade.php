@@ -132,5 +132,5 @@
 
   initMap();
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBp72eOQpjLanb-q35TCfpz44CC5GbRvTE&callback=initMap&libraries=maps"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&callback=initMap&libraries=maps"></script>
 @endsection
