@@ -13,23 +13,35 @@
     </div>
 
     <div class="container p-5 bg-light">
+
         <form action="{{ route('locations.store') }}" method="post">
             @csrf
-        <div class="form-group mb-3">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" name="name">
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <div class="form-group mb-3">
+                <label for="name">Name</label>
+                <input type="text" value="{{ old('name') }}" class="form-control" id="name" name="name">
         </div>
         <div class="form-group mb-3">
             <label for="color">Color (Hex)</label>
-            <input type="text" class="form-control" placeholder="#000000" id="color" name="color">
+            <input type="text" value="{{ old('color') }}" class="form-control" placeholder="#000000" id="color" name="color">
         </div>
         <div class="form-group mb-3">
             <label for="latitude">Latitude</label>
-            <input type="double" class="form-control" id="latitude" name="latitude">
+            <input type="double" value="{{ old('latitude') }}" class="form-control" id="latitude" name="latitude">
         </div>
         <div class="form-group mb-3">
             <label for="longitude">Longitude</label>
-            <input type="double" class="form-control" id="longitude" name="longitude">
+            <input type="double" value="{{ old('longitude') }}" class="form-control" id="longitude" name="longitude">
         </div>
         <button type="submit" class="btn btn-primary">Create</button>
     </form>

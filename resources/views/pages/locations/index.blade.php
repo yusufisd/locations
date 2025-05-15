@@ -43,10 +43,13 @@
                     <td>{{ $location->longitude }}</td>
                     <td>
                         <div class="flex d-flex flex-row justify-content-between align-items-center gap-2 px-4 py-1">
+                            <a href="{{ route('locations.detail', $location->id) }}">
+                                <i class="bi bi-eye"></i>
+                            </a>
                             <a href="{{ route('locations.edit', $location->id) }}">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
-                        <a href="{{ route('locations.destroy', $location->id) }}">
+                            <a href="{{ route('locations.destroy', $location->id) }}">
                                 <i class="bi bi-trash"></i>
                             </a>
                         </div>

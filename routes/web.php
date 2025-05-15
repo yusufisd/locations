@@ -12,6 +12,7 @@ Route::get('/', function () {
 Route::controller(LocationController::class)->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/locations', 'index')->name('locations.index');
+    Route::get('/locations/detail/{id}', 'detail')->name('locations.detail');
     Route::get('/locations/create', 'create')->name('locations.create');
     Route::post('/locations', 'store')->name('locations.store');
     Route::get('/locations/{id}/edit', 'edit')->name('locations.edit');
