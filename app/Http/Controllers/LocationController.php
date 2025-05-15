@@ -59,6 +59,19 @@ class LocationController extends Controller
     public function route()
     {
         $locations = $this->locationService->getAllLocations();
-        return view('pages.locations.route', compact('locations'));
+        return view('pages.route.index', compact('locations'));
+    }
+
+    public function startRoute()
+    {
+        return view('pages.route.startRoute');
+    }
+
+    public function calculateRoute(Request $request)
+    {
+        $startLatitude = $request->input('startLatitude');
+        $startLongitude = $request->input('startLongitude');
+        $locations = $this->locationService->getAllLocations();
+        return view('pages.route.index', compact('locations', 'startLatitude', 'startLongitude'));
     }
 }

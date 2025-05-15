@@ -38,4 +38,5 @@ class LocationService
     {
         return $this->locationRepository->deleteLocation($id);
     }
+
 }   

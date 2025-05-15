@@ -18,7 +18,8 @@ Route::controller(LocationController::class)->group(function () {
     Route::get('/locations/{id}/edit', 'edit')->name('locations.edit');
     Route::put('/locations/{id}', 'update')->name('locations.update');
     Route::delete('/locations/{id}', 'destroy')->name('locations.destroy');
-    Route::get('/locations/route/index', 'route')->name('locations.route.index');
+    Route::get('/locations/route/start', 'startRoute')->name('locations.route.start');
+    Route::post('/locations/route/index', 'calculateRoute')->name('locations.route.index');
 });
 
 Route::get('/locations/route', function () {

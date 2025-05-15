@@ -38,4 +38,5 @@ class LocationRepository implements LocationRepositoryInterface
     {
         return $this->location->find($id)->delete();
     }
+
 }
