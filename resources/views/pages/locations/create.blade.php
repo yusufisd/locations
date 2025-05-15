@@ -5,8 +5,11 @@
 @section('content')
 
 <div class="container-fluid container-lg">
-    <div class="container p-5">
-        <h1>Create Location</h1>
+   
+    <div class="flex d-flex flex-row justify-content-between align-items-center w-100 py-4 bg-light shadow-sm">
+        <div class="container">
+            <h1 class="mb-0 text-primary">Create Location</h1>
+        </div>
     </div>
 
     <div class="container p-5 bg-light">
@@ -22,11 +25,11 @@
         </div>
         <div class="form-group mb-3">
             <label for="latitude">Latitude</label>
-            <input type="number" class="form-control" id="latitude" name="latitude">
+            <input type="double" class="form-control" id="latitude" name="latitude">
         </div>
         <div class="form-group mb-3">
             <label for="longitude">Longitude</label>
-            <input type="number" class="form-control" id="longitude" name="longitude">
+            <input type="double" class="form-control" id="longitude" name="longitude">
         </div>
         <button type="submit" class="btn btn-primary">Create</button>
     </form>

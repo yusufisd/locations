@@ -5,8 +5,11 @@
 @section('content')
 
 <div class="container-fluid container-lg">
-    <div class="container p-5">
-        <h1>Edit Location</h1>
+
+    <div class="flex d-flex flex-row justify-content-between align-items-center w-100 py-4 bg-light shadow-sm">
+        <div class="container">
+            <h1 class="mb-0 text-primary">Edit Location</h1>
+        </div>
     </div>
 
     <div class="container p-5 bg-light">

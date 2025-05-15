@@ -49,4 +49,9 @@ class LocationController extends Controller
         return redirect()->route('locations.index');
     }
 
+    public function route()
+    {
+        $locations = $this->locationService->getAllLocations();
+        return view('pages.locations.route', compact('locations'));
+    }
 }

@@ -5,12 +5,22 @@
 @section('content')
 
 <div class="container-fluid container-lg ">
-    <div class="flex d-flex flex-row justify-content-between align-items-center w-100">
-        <div class=" p-5">
-            <h1>Locations</h1>
+
+    <div class="flex d-flex flex-row justify-content-between align-items-center w-100 py-4 bg-light shadow-sm">
+        <div class="container">
+            <h1 class="mb-0 text-primary">Locations</h1>
         </div>
-        <div class=" p-5">
-            <a href="{{ route('locations.create') }}" class="btn btn-primary">Create Location</a>
+        <div class="flex d-flex flex-row justify-content-between align-items-center w-100">
+            <div class="container text-end">
+                <a href="{{ route('locations.create') }}" class="btn btn-outline-primary rounded-pill px-4">
+                    <i class="bi bi-list me-2"></i> Create Location
+                </a>
+            </div>
+            <div class="container text-end">
+                <a href="{{ route('locations.route.index') }}" class="btn btn-outline-primary rounded-pill px-4">
+                    <i class="bi bi-list me-2"></i>View Route
+                </a>
+            </div>
         </div>
     </div>
 
@@ -32,7 +42,14 @@
                     <td>{{ $location->latitude }}</td>
                     <td>{{ $location->longitude }}</td>
                     <td>
-                        <a href="{{ route('locations.edit', $location->id) }}">Edit</a>
+                        <div class="flex d-flex flex-row justify-content-between align-items-center gap-2 px-4 py-1">
+                            <a href="{{ route('locations.edit', $location->id) }}">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                        <a href="{{ route('locations.destroy', $location->id) }}">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                        </div>
                     </td>
                 </tr>
             @endforeach
